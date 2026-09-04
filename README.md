@@ -1,6 +1,6 @@
 # Fotoly Browser Extension
 
-Manifest V3 extension for Chrome, Brave, and Chromium to upload screenshots and image files to Fotoly.
+Manifest V3 extension for Chrome, Brave, and Chromium to upload screenshots and image files to [Fotoly.eu](https://fotoly.eu "Fotoly")
 
 ## Load Locally
 
