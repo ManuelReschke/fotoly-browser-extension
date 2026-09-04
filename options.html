@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fotoly Settings</title>
+    <link rel="stylesheet" href="ui.css">
+  </head>
+  <body class="options-shell">
+    <main class="settings-layout">
+      <header class="app-header wide">
+        <img src="icons/icon48.png" alt="" width="48" height="48">
+        <div>
+          <h1>Fotoly Settings</h1>
+          <p>API access and upload defaults for the extension.</p>
+        </div>
+      </header>
+
+      <form id="settingsForm" class="settings-form">
+        <section class="panel">
+          <label class="field">
+            <span>API key</span>
+            <input id="apiKeyInput" type="password" autocomplete="off" spellcheck="false" placeholder="Paste Fotoly API key">
+          </label>
+          <div class="meta-row">
+            <span id="savedKeyState">No API key saved.</span>
+            <button id="deleteKeyButton" class="link-button inline" type="button">
+              <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 6h18M8 6V4h8v2M6 6l1 15h10l1-15M10 11v6M14 11v6"></path>
+              </svg>
+              <span>Delete key</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="panel">
+          <label class="field">
+            <span>Fotoly base URL</span>
+            <select id="baseUrlInput">
+              <option value="https://fotoly.eu">https://fotoly.eu</option>
+              <option value="http://localhost:8080">http://localhost:8080</option>
+              <option value="http://127.0.0.1:8080">http://127.0.0.1:8080</option>
+            </select>
+          </label>
+
+          <label class="checkbox-field">
+            <input id="nsfwInput" type="checkbox">
+            <span>Mark uploads as NSFW</span>
+          </label>
+
+          <label class="field">
+            <span>Processing</span>
+            <select id="processingInput">
+              <option value="original_only">Upload original only</option>
+              <option value="default">Use Fotoly default</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Album ID optional</span>
+            <input id="albumIdInput" type="number" min="1" step="1" inputmode="numeric" placeholder="e.g. 7">
+          </label>
+        </section>
+
+        <section class="status-card" aria-live="polite">
+          <div id="statusText">Ready.</div>
+        </section>
+
+        <div class="button-row">
+          <button id="saveButton" class="primary-button" type="submit">
+            <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="m5 12 4 4L19 6"></path>
+            </svg>
+            <span>Save</span>
+          </button>
+          <button id="validateButton" class="secondary-button" type="button">
+            <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3 20 7v5c0 5-3.4 8-8 9-4.6-1-8-4-8-9V7Z"></path>
+              <path d="m9 12 2 2 4-4"></path>
+            </svg>
+            <span>Check API key</span>
+          </button>
+        </div>
+      </form>
+
+      <p id="versionText" class="version-text"></p>
+    </main>
+
+    <script type="module" src="options.js"></script>
+  </body>
+</html>
